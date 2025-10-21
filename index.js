@@ -25,18 +25,4 @@ app.listen(PORT, () => {
   console.log(`🚀 Servidor escuchando en http://localhost:${PORT}`);
 });
 
-const express = require('express');
-const cors = require('cors');
-const sequelize = require('./db');
-const clienteRoutes = require('./cliente');
-
-const app = express();
-
-app.use(cors()); // 🔹 Habilita CORS
-app.use(express.json());
-
-app.use('/api/clientes', clienteRoutes);
-
-const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => console.log(`Servidor escuchando en http://localhost:${PORT}`));
 
